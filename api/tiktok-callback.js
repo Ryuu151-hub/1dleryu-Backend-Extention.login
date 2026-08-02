@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       <html>
         <body>
           <script>
-            chrome.runtime.sendMessage('offfjkfhconjeakkacdfbiohanmgdjko', {
+            chrome.runtime.sendMessage('hngfccpjekmclohkbhbdblalmdccojff', {
               type: 'tiktok-auth-success',
               accessToken: '${tokenData.access_token}',
               openId: '${tokenData.open_id}'
