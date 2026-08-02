@@ -18,8 +18,8 @@ export default async function handler(req, res) {
         'Cache-Control': 'no-cache',
       },
       body: new URLSearchParams({
-        client_key: process.env.aw1i7e3ne3madaa0,
-        client_secret: process.env.fxEYfRk8dF7AVkAi77UQX5aPOZYKeI2x,
+        client_key: process.env.sbaw1cszbxziwmm7b4,
+        client_secret: process.env.QQhlhL44rW0qRzZFfRrVn4E3tzN72jqg,
         code: code,
         grant_type: 'authorization_code',
         redirect_uri: process.env.TIKTOK_REDIRECT_URI,
