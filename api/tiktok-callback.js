@@ -35,20 +35,19 @@ export default async function handler(req, res) {
     // tokenData contains: access_token, refresh_token, expires_in, open_id, scope, etc.
     // TODO: store tokenData securely (e.g. a database keyed by state or open_id)
 
-    // Send a simple page back that posts the result to the extension via window.opener
+    // Send a simple page back that messages the extension directly
     res.setHeader('Content-Type', 'text/html');
     return res.status(200).send(`
       <html>
         <body>
           <script>
-            window.opener.postMessage({
+            chrome.runtime.sendMessage('offfjkfhconjeakkacdfbiohanmgdjko', {
               type: 'tiktok-auth-success',
               accessToken: '${tokenData.access_token}',
               openId: '${tokenData.open_id}'
-            }, '*');
-            window.close();
+            });
+            document.body.innerHTML = '<p>Login successful. You can close this tab.</p>';
           </script>
-          <p>Login successful. You can close this window.</p>
         </body>
       </html>
     `);
